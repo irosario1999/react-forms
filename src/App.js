@@ -1,15 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Form from "./componets/Form";
 
-export default class App extends React.Component {
-  render(){
+export default class App extends Component {
+  state = {
+    firstName: "",
+    lastName: "",
+    email: ""
+  };
+
+  getFormValues = (e, name) => {
+    this.setState({
+      [name]: e.target.value
+    }, () => console.log(this.state));
+  };
+
+  getAllFormData = e => {
+    e.preventDefault();
+    console.log(this.state);
+  };
+
+  render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-      </div>
+      <Form
+        getFormValues={this.getFormValues}
+        getAllFormData={this.getAllFormData}
+      />
     );
   }
 }
