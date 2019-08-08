@@ -16,15 +16,19 @@ export default class App extends Component {
 
   getAllFormData = e => {
     e.preventDefault();
-    console.log(this.state);
+    const {firstName, lastName} = this.state
+    alert(`Hello ${firstName} ${lastName}`)
   };
 
   render() {
     return (
-      <Form
-        getFormValues={this.getFormValues}
-        getAllFormData={this.getAllFormData}
-      />
+      <>
+        <h1>Hello Guys!</h1>
+        <Form
+          getFormValues={this.getFormValues}
+          getAllFormData={this.getAllFormData}
+        />
+      </>
     );
   }
 }
