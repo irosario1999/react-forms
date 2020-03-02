@@ -19,7 +19,11 @@ export default class App extends Component {
     email: ""
   };
 
+
   getFormValues = (e, name) => {
+
+    const  password = "1234"
+
     this.setState({
       [name]: e.target.value
     }, () => console.log(this.state));
